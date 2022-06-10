@@ -1,0 +1,60 @@
+.techs {
+  display: flex;
+  flex-direction: column;
+  margin-top: 140px;
+  padding: 0 4px 0 4px;
+}
+
+.techs__title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 36px;
+  color: #000000;
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  margin-top: 60px;
+}
+
+.techs__paragraph {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 16px;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  margin-top: 24px;
+  text-align: center;
+}
+
+.techs__list {
+  display: grid;
+  grid-template-columns: repeat( 2, 1fr );
+  gap: 10px;
+  margin: 50px auto;
+  padding: 0;
+  border: 0;
+}
+
+.techs__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 84px;
+  height: 57px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #000000;
+  margin: 0 auto;
+  border: 0;
+  text-align: center;
+  padding: 0;
+  background-color: #e8e8e8;
+  border-radius: 10px;
+  list-style: none;
+}
