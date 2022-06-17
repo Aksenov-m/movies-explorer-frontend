@@ -5,7 +5,7 @@ function Portfolio() {
   return (
     <section className='portfolio section content__section'>
       <h2 className='portfolio__title'>Портфолио</h2>
-      <nav>
+      <nav className='portfolio__content'>
         <ul className='portfolio__nenu'>
           <li className='portfolio__list'>
             <a href='https://github.com/Aksenov-m/how-to-learn' className='portfolio__link'>

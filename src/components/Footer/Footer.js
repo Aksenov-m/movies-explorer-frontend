@@ -23,8 +23,8 @@ function Footer() {
             </a>
           </li>
         </ul>
+        <p className='footer__copyright'>&copy;2022</p>
       </nav>
-      <p className='footer__copyright'>&copy;2022</p>
     </footer>
   );
 }

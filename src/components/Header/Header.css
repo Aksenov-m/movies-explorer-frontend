@@ -56,8 +56,32 @@
   display: none;
 }
 
-@media (min-width: 769px) {
-  .header__button{
-    display: none;
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .header__text {
+    font-size: 12px;
+  }
+  .header__info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .header__text_type_signin {
+    padding: 8px 20px 8px 20px;
+  }
+  .header__text:first-child {
+    padding-right: 30px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .header {
+    padding-left: 70px;
+    padding-right: 70px;
   }
 }

@@ -9,12 +9,11 @@ import Profile from "../Profile/Profile";
 import Login from "../Login/Login";
 import Register from "../Register/Register";
 import PageNotFound from "../PageNotFound/PageNotFound";
-import Navigation from "../Navigation/Navigation";
 import "./App.css";
 
 function App() {
   const [isBurgerOpen, setBurgerOpen] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(true);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   function handleBurgeClick() {
     setBurgerOpen(true);
