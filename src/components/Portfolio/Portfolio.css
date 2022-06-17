@@ -59,6 +59,7 @@
   border: 0;
   text-align: left;
   padding: 0;
+  letter-spacing: -0.04em;
 }
 
 .portfolio__arrow {
@@ -69,6 +70,7 @@
   color: #000000;
   margin: 0;
   border: 0;
+  padding-left: 27px;
 }
 
 .portfolio__list:first-of-type {

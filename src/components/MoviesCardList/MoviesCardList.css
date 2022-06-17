@@ -1,0 +1,15 @@
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 300px);
+    grid-template-rows: min-content;
+    row-gap: 14px;
+    column-gap: 20px;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  
+  @media screen and (min-width: 700px) {
+    .cards {
+      grid-template-columns: repeat(auto-fit, minmax(1fr, calc(100% / 2)));
+    }
+  }

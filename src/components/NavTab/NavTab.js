@@ -5,18 +5,18 @@ function NavTab() {
   return (
     <nav className='navtab__nenu'>
       <ul className='navtab__links'>
-        <li>
-          <a href='' className='navtab__link'>
+        <li className='about-me__item'>
+          <a href='#about-project' className='navtab__link'>
             О проекте
           </a>
         </li>
-        <li>
-          <a href='' className='navtab__link'>
+        <li className='about-me__item'>
+          <a href='#techs' className='navtab__link'>
             Технологии
           </a>
         </li>
-        <li>
-          <a href='' target='_blank' className='navtab__link'>
+        <li className='about-me__item'>
+          <a href='#about-me' className='navtab__link'>
             Студент
           </a>
         </li>

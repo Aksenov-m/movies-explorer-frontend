@@ -1,0 +1,36 @@
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 329px;
+  margin-bottom: 30px;
+}
+
+.not-found__text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  /* line-height: 159px; */
+  color: #000000;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 284px;
+  padding: 0;
+  max-width: 100%;
+}
+
+.not-found__title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 80px;
+  line-height: 97px;
+  color: #000000;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-top: 10px;
+  padding: 0;
+  max-width: 100%;
+}

@@ -4,7 +4,7 @@ import "./AboutMe.css";
 
 function AboutMe() {
   return (
-    <section className='about-me section content__section'>
+    <section id='about-me' className='about-me section content__section'>
       <div className='about'>
         <h2 className='title'>Студент</h2>
       </div>
@@ -14,7 +14,8 @@ function AboutMe() {
         <h3 className='about-me__subtitle'>Фронтенд-разработчик, 34 года</h3>
         <p className='about-me__paragraph'>
           Я родился и живу в Московской области, закончил факультет ПГС университета МГСУ. У меня есть жена и две дочки.
-          Я увлекаюсь футболом, сноубордом. Недавно начал кодить. С 2015 года работаю в компании «ГОРПРОЕКТ».
+          Я увлекаюсь футболом, сноубордом. Недавно начал кодить. С 2015 года работаю в компании «ГОРПРОЕКТ». hsajdagsd
+          sahfkhasfaskj gfsdfhsdgfhjagsfgashjgfjasgfksahjopauu
         </p>
       </article>
       <nav>
