@@ -65,3 +65,15 @@
 .movies-card__close {
   background-image: url(../../images/close.svg);
 }
+
+@media screen and (min-width: 768px) {
+  .movies-card__image {
+    height: 190px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .movies-card__image {
+    height: 203px;
+  }
+}

@@ -11,7 +11,7 @@
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
-  /* line-height: 159px; */
+  line-height: 15px;
   color: #000000;
   white-space: nowrap;
   overflow: hidden;
@@ -26,11 +26,33 @@
   font-style: normal;
   font-weight: 400;
   font-size: 80px;
-  line-height: 97px;
+  line-height: 15px;
   color: #000000;
   white-space: nowrap;
   overflow: hidden;
   margin-top: 10px;
   padding: 0;
   max-width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .not-found__title {
+    font-size: 140px;
+    line-height: 169px;
+  }
+  .not-found {
+    margin-top: 399px;
+  }
+  .not-found__text {
+    margin-top: 4px;
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 184px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .not-found {
+    margin-top: 237px;
+  }
 }

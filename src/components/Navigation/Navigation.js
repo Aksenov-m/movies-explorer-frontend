@@ -41,7 +41,7 @@ const Navigation = (props) => {
               activeClassName='navigation__link_active'
               onClick={props.closeBurger}
             >
-              Сохранённые фильмы
+              Сохранённые&nbsp;фильмы
             </NavLink>
           </li>
           <li className='navigation__list'>

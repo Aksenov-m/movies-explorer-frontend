@@ -1,5 +1,6 @@
 .search-form {
   width: 100%;
+  position: relative;
 }
 
 .search-form__movies {
@@ -15,6 +16,8 @@
 .search-form__input {
   width: 100%;
   height: 72px;
+  padding: 0;
+  margin: 0;
   border: none;
   background-color: #f9f9f9;
   border-radius: 9px;
@@ -42,6 +45,7 @@
 .search-form__checkbox {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: center;
   margin: 0 auto;
   padding-top: 46px;
@@ -62,11 +66,6 @@
   font-size: 11px;
   line-height: 18px;
   color: #000000;
-}
-
-.search-form__checkbox {
-  display: flex;
-  flex-direction: row;
 }
 
 .search-form__switch {
@@ -107,4 +106,73 @@
   transform: translateX(100%);
   transition: transform 0.3s ease;
   background-color: #f5f5f5;
+}
+
+@media screen and (min-width: 768px) {
+  .search-form__input::placeholder {
+    padding-left: 60px;
+    font-size: 18px;
+  }
+
+  .search-form__input {
+    background-color: inherit;
+    width: 100%;
+    margin: 0;
+  }
+
+  .search-form__movies::before {
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-image: url(../../images/search.svg);
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    position: absolute;
+    left: 28px;
+    top: 28px;
+  }
+
+  .search-form__text {
+    font-size: 13px;
+  }
+
+  .search-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #f9f9f9;
+    border-radius: 9px;
+  }
+
+  .search-form__movies {
+    justify-content: flex-start;
+    width: 500px;
+    margin: 0;
+  }
+
+  .search-form__movies::after {
+    content: "";
+    height: 40px;
+    border-right: 1px;
+    border-right-style: solid;
+    border-color: rgb(232, 232, 232);
+  }
+
+  .search-form__checkbox {
+    padding: 0;
+    border: none;
+    margin: 0;
+    margin-left: 22px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .search-form__movies {
+    width: 903px;
+  }
+  .search-form__checkbox {
+    margin-left: 40px;
+  }
 }

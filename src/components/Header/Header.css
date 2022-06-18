@@ -15,6 +15,10 @@
   max-height: 38px;
 }
 
+.header__info {
+  display: flex;
+}
+
 .header__text {
   font-style: normal;
   font-weight: 500;
@@ -63,19 +67,28 @@
     padding-left: 30px;
     padding-right: 30px;
   }
+
   .header__text {
     font-size: 12px;
   }
+
   .header__info {
-    display: flex;
     flex-direction: row;
     align-items: center;
   }
+
   .header__text_type_signin {
     padding: 8px 20px 8px 20px;
   }
+
   .header__text:first-child {
     padding-right: 30px;
+  }
+
+  .header__button {
+    width: 47px;
+    height: 44px;
+    padding: 0;
   }
 }
 
@@ -83,5 +96,10 @@
   .header {
     padding-left: 70px;
     padding-right: 70px;
+    justify-content: flex-start;
+  }
+
+  .header__button {
+    display: none;
   }
 }

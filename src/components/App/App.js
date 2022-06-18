@@ -13,7 +13,7 @@ import "./App.css";
 
 function App() {
   const [isBurgerOpen, setBurgerOpen] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
 
   function handleBurgeClick() {
     setBurgerOpen(true);

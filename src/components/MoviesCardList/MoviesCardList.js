@@ -8,8 +8,15 @@ function MoviesCardList(props) {
       <MoviesCard isSavedMoviesCard={props.isSavedMoviesCard} />
       <MoviesCard isSavedMoviesCard={props.isSavedMoviesCard} />
       <MoviesCard isSavedMoviesCard={props.isSavedMoviesCard} />
+      {/* <MoviesCard isSavedMoviesCard={props.isSavedMoviesCard} />
       <MoviesCard isSavedMoviesCard={props.isSavedMoviesCard} />
       <MoviesCard isSavedMoviesCard={props.isSavedMoviesCard} />
+      <MoviesCard isSavedMoviesCard={props.isSavedMoviesCard} />
+      <MoviesCard isSavedMoviesCard={props.isSavedMoviesCard} />
+      <MoviesCard isSavedMoviesCard={props.isSavedMoviesCard} />
+      <MoviesCard isSavedMoviesCard={props.isSavedMoviesCard} />
+      <MoviesCard isSavedMoviesCard={props.isSavedMoviesCard} />
+      <MoviesCard isSavedMoviesCard={props.isSavedMoviesCard} /> */}
     </section>
   );
 }

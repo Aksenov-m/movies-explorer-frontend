@@ -93,3 +93,34 @@
   color: #ee3465;
   margin-top: 16px;
 }
+
+@media screen and (min-width: 768px) {
+  .content__profile {
+    margin-top: 248px;
+    margin-left: 179px;
+    margin-right: 179px;
+  }
+
+  .profile__form {
+    margin-top: 97px;
+    margin-bottom: 211px;
+  }
+
+  .profile__button {
+    font-size: 13px;
+    line-height: 16px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .content__profile {
+    margin-top: 92px;
+    margin-left: 435px;
+    margin-right: 435px;
+  }
+
+  .profile__form {
+    margin-top: 125px;
+    margin-bottom: 220px;
+  }
+}

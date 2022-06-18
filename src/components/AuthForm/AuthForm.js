@@ -7,8 +7,10 @@ import "./AuthForm.css";
 function AuthForm(props) {
   return (
     <div className='auth-form section'>
-      <img className='header__logo' src={logo} alt='Логотип.' />
-      <h2 className='auth-form__title'>{props.title}</h2>
+      <div className='auth-form__header'>
+        <img className='header__logo' src={logo} alt='Логотип.' />
+        <h2 className='auth-form__title'>{props.title}</h2>
+      </div>
       <form className={`auth-form__info auth-form__info_form_${props.name}`} name={props.name}>
         {props.children}
       </form>
