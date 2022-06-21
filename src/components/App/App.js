@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
@@ -14,6 +14,17 @@ import "./App.css";
 function App() {
   const [isBurgerOpen, setBurgerOpen] = useState(false);
   const [loggedIn, setLoggedIn] = useState(true);
+  const [size, setSize] = useState(window.innerWidth);
+
+  const handlResize = () => {
+    setSize(window.innerWidth);
+  };
+
+  useEffect(() => {
+    handlResize();
+    window.addEventListener("resize", handlResize);
+    return () => window.removeEventListener("resize", handlResize);
+  }, []);
 
   function handleBurgeClick() {
     setBurgerOpen(true);

@@ -17,7 +17,7 @@ function MoviesCard(props) {
       </div>
       {/* <button className='movies-card__close' type='button' aria-label='closeMovies-card'></button> */}
       {/* <button className='movies-card__favorite' type='button' aria-label='favorite'></button> */}
-      <img className='movies-card__image' src={moviesCard} alt='' />
+      <img className='movies-card__image' src={moviesCard} alt='Обложка фильма.' />
     </article>
   );
 }

@@ -167,8 +167,23 @@
     margin-left: 22px;
   }
 }
+@media screen and (min-width: 787px) {
+  .search-form {
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding-right: 50px;
+  }
+
+  .search-form__movies {
+    width: calc(90%);
+  }
+}
 
 @media screen and (min-width: 1280px) {
+  .search-form {
+    justify-content: flex-start;
+    padding: 0;
+  }
   .search-form__movies {
     width: 903px;
   }

@@ -160,6 +160,12 @@
 }
 
 @media (min-width: 769px) {
+  .navigation {
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-left: 44px;
+  }
+
   .navigation__link {
     font-size: 13px;
     line-height: 18px;
@@ -167,16 +173,11 @@
 }
 
 @media (min-width: 1280px) {
-  .navigation {
-    flex-direction: row;
-    margin-left: 44px;
-  }
-
   .navigation__nenu {
     gap: 16px;
   }
 
   .navigation__list:last-of-type {
-    margin-left: 731px;
+    margin-left: 746px;
   }
 }

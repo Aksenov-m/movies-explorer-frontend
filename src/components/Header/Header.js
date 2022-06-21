@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import logo from "../../images/logo.svg";
 import { Link } from "react-router-dom";
 import Navigation from "../Navigation/Navigation";
@@ -6,6 +6,7 @@ import "./Header.css";
 
 function Header(props) {
   useEffect(() => {
+    if (!props.burgerOpen) return;
     function handleEscClose(evt) {
       if (evt.key === "Escape") {
         props.closeBurger();
@@ -13,7 +14,7 @@ function Header(props) {
     }
     document.addEventListener("keydown", handleEscClose);
     return () => document.removeEventListener("keydown", handleEscClose);
-  }, [props.burgerOpen]);
+  }, [props.burgerOpen, props.closeBurger]);
 
   useEffect(() => {
     function handleClickClose(evt) {
@@ -23,7 +24,7 @@ function Header(props) {
     }
     document.addEventListener("click", handleClickClose);
     return () => document.removeEventListener("click", handleClickClose);
-  }, [props.burgerOpen]);
+  }, [props.burgerOpen, props.closeBurger]);
 
   return (
     <header className='header section page__header'>
