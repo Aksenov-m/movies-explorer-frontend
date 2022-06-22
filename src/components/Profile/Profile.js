@@ -7,7 +7,7 @@ import "./Profile.css";
 function Profile(props) {
   // Подписка на контекст
   // const currentUser = useContext(CurrentUserContext);
-  // const [values, setValues] = useState({});
+  const [values, setValues] = useState({});
 
   // После загрузки текущего пользователя из API
   // его данные будут использованы в управляемых компонентах.
@@ -49,7 +49,7 @@ function Profile(props) {
             placeholder='Виталий'
             required
             pattern='[a-zA-Zа-яА-Я -]{1,}'
-            // value={values.name || ""}
+            value={values.name || ""}
             // onChange={handleChangeInput}
           ></input>
         </fieldset>
@@ -64,7 +64,7 @@ function Profile(props) {
             name='email'
             placeholder='pochta@yandex.ru'
             required
-            // value={values.email || ""}
+            value={values.email || ""}
             // onChange={handleChangeInput}
           ></input>
         </fieldset>

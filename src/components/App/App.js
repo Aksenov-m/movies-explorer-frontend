@@ -9,11 +9,14 @@ import Profile from "../Profile/Profile";
 import Login from "../Login/Login";
 import Register from "../Register/Register";
 import PageNotFound from "../PageNotFound/PageNotFound";
+import Preloader from "../Preloader/Preloader";
 import "./App.css";
 
 function App() {
   const [isBurgerOpen, setBurgerOpen] = useState(false);
   const [loggedIn, setLoggedIn] = useState(true);
+  // Стейт, который информирует пользователя об успешной (или не очень) регистрации
+  const [isRegister, setIsRegister] = useState(false);
   const [size, setSize] = useState(window.innerWidth);
 
   const handlResize = () => {
@@ -33,6 +36,22 @@ function App() {
   function closeBurger() {
     setBurgerOpen(false);
   }
+
+  // function handleRegister(name, email, password) {
+  //   return mestoAuth
+  //     .register(name, email, password)
+  //     .then((res) => {
+  //       if (res.data) {
+  //         history.push("/sign-in");
+  //         setIsRegister(true);
+  //         setInfoTooltipPopupOpen(true);
+  //       } else {
+  //         setInfoTooltipPopupOpen(true);
+  //         setIsRegister(false);
+  //       }
+  //     })
+  //     .catch((res) => console.log(res.message));
+  // }
 
   return (
     <div className='App'>
