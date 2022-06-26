@@ -25,6 +25,7 @@
 }
 
 .auth-form__info {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -33,11 +34,10 @@
   padding: 0;
   width: 100%;
   margin-top: 80px;
-  margin-bottom: 224px;
 }
 
 .auth-form__info_form_login {
-  margin-bottom: 290px;
+  margin-bottom: 66px;
 }
 
 .auth-form__link {
@@ -71,6 +71,20 @@
   background: transparent;
   border: none;
   text-decoration: none;
+}
+
+.auth-form__error {
+  position: absolute;
+  left: 40px;
+  bottom: 50px;
+  align-items: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #ee3465;
+  transition: 0.3s;
+  padding-top: 6px;
 }
 
 @media screen and (min-width: 321px) {

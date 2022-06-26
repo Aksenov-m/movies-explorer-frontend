@@ -17,12 +17,13 @@ function AuthForm(props) {
         onSubmit={props.onSubmit}
       >
         {props.children}
+        <p className='auth-form__error'>{props.errorMessage}</p>
+        <button type='submit' className='button button_theme_green link' disabled={!props.isValid}>
+          {props.buttonText}
+        </button>
       </form>
-      <button disabled={!props.isValid} type='submit' className='button button_theme_green link'>
-        {props.buttonText}
-      </button>
       <div className='auth-form__link'>
-        <p className='auth-form__text'>{props.text}</p>
+        <p className='auth-form__text'>{props.text || "500 На сервере произошла ошибка."}</p>
         <Link className='auth-form__button link' to={props.link}>
           {props.namelink}
         </Link>

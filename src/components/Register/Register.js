@@ -1,31 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 // import { withRouter } from "react-router-dom";
 import AuthForm from "../AuthForm/AuthForm";
 import "./Register.css";
-import useFormWithValidation from "../useFormWithValidation";
+import useFormWithValidation from "../../hooks/useFormWithValidation";
 
 function Register({ handleRegister }) {
-  // const [registerData, setRegisterData] = useState({
-  //   name: '',
-  //   email: '',
-  //   password: '',
-  // })
-
+  const [message, setMessage] = useState("");
   const { values, handleChange, resetForm, errors, isValid } = useFormWithValidation();
-
-  // const { name, email, password } = registerData;
-
-  // function handleChange(e) {
-  //   const { name, value } = e.target
-  //   setRegisterData({
-  //     ...registerData,
-  //     [name]: value,
-  //   })
-  // }
 
   function handleSubmit(e) {
     e.preventDefault();
-    handleRegister(values.name, values.email, values.password);
+    handleRegister(values.name, values.email, values.password).catch((e) => setMessage(e.message));
   }
 
   useEffect(() => {
@@ -43,8 +28,9 @@ function Register({ handleRegister }) {
         link='/signin'
         onSubmit={handleSubmit}
         isValid={isValid}
+        errorMessage={message}
       >
-        <label className='register__label' for='name'>
+        <label className='register__label' htmlFor='name'>
           Имя
         </label>
         <input
@@ -52,7 +38,7 @@ function Register({ handleRegister }) {
           name='name'
           className='form__input register__input_string_name'
           type='text'
-          placeholder='Виталий'
+          placeholder=''
           required
           autoComplete='off'
           minLength='2'
@@ -62,7 +48,7 @@ function Register({ handleRegister }) {
           onChange={handleChange}
         />
         <span className='form__input-error register__name-error'>{errors.name || ""}</span>
-        <label className='register__label' for='email'>
+        <label className='register__label' htmlFor='email'>
           E-&nbsp;mail
         </label>
         <input
@@ -70,7 +56,7 @@ function Register({ handleRegister }) {
           name='email'
           className='form__input register__input_string_email'
           type='text'
-          placeholder='pochta@yandex.ru'
+          placeholder=''
           required
           autoComplete='off'
           minLength='2'
@@ -79,7 +65,7 @@ function Register({ handleRegister }) {
           onChange={handleChange}
         />
         <span className='form__input-error register__email-error'>{errors.email || ""}</span>
-        <label className='register__label' for='password'>
+        <label className='register__label' htmlFor='password'>
           Пароль
         </label>
         <input

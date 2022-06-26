@@ -60,7 +60,7 @@ export class Api {
   }
 
   // Редактирование профиля
-  setUserInfo(user) {
+  setUserInfo(name, email) {
     return fetch(`${this._url}/users/me`, {
       method: "PATCH",
       headers: {
@@ -68,8 +68,8 @@ export class Api {
         authorization: `Bearer ${localStorage.getItem("jwt")}`,
       },
       body: JSON.stringify({
-        name: user.name,
-        email: user.email,
+        name: name,
+        email: email,
       }),
     }).then(onError);
   }

@@ -1,60 +1,61 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import { Link } from "react-router-dom";
-// import { CurrentUserContext } from "../contexts/CurrentUserContext";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import useFormWithValidation from "../../hooks/useFormWithValidation";
 import "./Profile.css";
 
 // Функциональный компонент Profile
-function Profile(props) {
+function Profile({ handleUpdateUser, signOut, errorMessage }) {
+  const [isEditInfo, setIsEditInfo] = useState(false);
   // Подписка на контекст
-  // const currentUser = useContext(CurrentUserContext);
-  const [values, setValues] = useState({});
+  const currentUser = useContext(CurrentUserContext);
+  const ref = useRef(null);
+  const { values, handleChange, resetForm, errors, isValid } = useFormWithValidation();
 
-  // После загрузки текущего пользователя из API
-  // его данные будут использованы в управляемых компонентах.
-  // useEffect(() => {
-  //   if (currentUser)
-  //     // setName(currentUser.name);
-  //     // setDescription(currentUser.about);
-  //     setValues(currentUser);
-  // }, [currentUser]);
+  function handleSubmit(e) {
+    e.preventDefault();
+    handleUpdateUser(values.name, values.email);
+  }
 
-  // function handleChangeInput(e) {
-  //   setValues({
-  //     ...values,
-  //     [e.target.value.name]: e.target.value,
-  //   });
-  // }
+  const handleClick = () => {
+    setIsEditInfo(true);
+    ref.current.focus();
+  };
 
-  // function handleSubmit(e) {
-  //   // Запрещаем браузеру переходить по адресу формы
-  //   e.preventDefault();
+  useEffect(() => {
+    resetForm();
+  }, [resetForm]);
 
-  //   // Передаём значения управляемых компонентов во внешний обработчик
-  //   props.onUpdateUser(values);
-  // }
+  useEffect(() => {
+    if (currentUser) {
+      setIsEditInfo(false);
+    }
+  }, [currentUser]);
 
   return (
     <main className='section content__profile'>
-      <h2 className='profile__title'>Привет, Виталий!</h2>
+      <h2 className='profile__title'>{`Привет, ${currentUser.name}`}</h2>
       <form className='profile__form'>
-        <fieldset class='profile__info name'>
-          <label className='profile__label' for='name'>
+        <fieldset className='profile__info name'>
+          <label className='profile__label' htmlFor='name'>
             Имя
           </label>
           <input
+            ref={ref}
             className='profile__input'
             type='text'
             id='name'
             name='name'
-            placeholder='Виталий'
+            placeholder={currentUser.name}
             required
             pattern='[a-zA-Zа-яА-Я -]{1,}'
             value={values.name || ""}
-            // onChange={handleChangeInput}
+            onChange={handleChange}
           ></input>
+          <span className='form__input-error profile__name-error'>{errors.name || ""}</span>
         </fieldset>
-        <fieldset class='profile__info email'>
-          <label className='profile__label' for='email'>
+        <fieldset className='profile__info email'>
+          <label className='profile__label' htmlFor='email'>
             E-&nbsp;mail
           </label>
           <input
@@ -62,15 +63,33 @@ function Profile(props) {
             type='email'
             id='email'
             name='email'
-            placeholder='pochta@yandex.ru'
+            placeholder={currentUser.email}
             required
             value={values.email || ""}
-            // onChange={handleChangeInput}
+            onChange={handleChange}
           ></input>
+          <span className='form__input-error profile__email-error'>{errors.email || ""}</span>
         </fieldset>
+        <div className='profile__container'>
+          <p className='profile__error'>{errorMessage || ""}</p>
+          <button
+            className={`button button_theme_green link ${isEditInfo ? "" : "profile__button_disabled"}`}
+            type='submit'
+            disabled={!isValid}
+            onClick={handleSubmit}
+          >
+            Сохранить
+          </button>
+        </div>
       </form>
-      <button className='profile__button link'>Редактировать</button>
-      <Link className='profile__button profile__button_theme_red link' to='/signin'>
+      <button className={`profile__button link ${isEditInfo ? "profile__button_disabled" : ""}`} onClick={handleClick}>
+        Редактировать
+      </button>
+      <Link
+        className={`profile__button profile__button_theme_red link' ${isEditInfo ? "profile__button_disabled" : ""}`}
+        to='/signin'
+        onClick={signOut}
+      >
         Выйти из аккаунта
       </Link>
     </main>
