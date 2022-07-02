@@ -4,6 +4,8 @@ import "./Navigation.css";
 
 const Navigation = (props) => {
   return (
+    <>
+     {props.loggedIn ? (
     <div className={`navigation ${props.burgerOpen ? "navigation__burger_opened" : ""}`}>
       <button
         className='navigation__close-button link'
@@ -51,7 +53,8 @@ const Navigation = (props) => {
           </li>
         </ul>
       </nav>
-    </div>
+    </div>) : (<></>)}
+    </>
   );
 };
 

@@ -21,6 +21,7 @@
   border: none;
   background-color: #f9f9f9;
   border-radius: 9px;
+  padding-left: 15px;
 }
 
 .search-form__input::placeholder {
@@ -118,6 +119,7 @@
     background-color: inherit;
     width: 100%;
     margin: 0;
+    padding-left: 45px;
   }
 
   .search-form__movies::before {

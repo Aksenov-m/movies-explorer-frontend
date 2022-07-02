@@ -1,8 +1,9 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect } from "react";
 import logo from "../../images/logo.svg";
 import { Link } from "react-router-dom";
 import Navigation from "../Navigation/Navigation";
 import "./Header.css";
+
 
 function Header(props) {
   useEffect(() => {

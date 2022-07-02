@@ -4,19 +4,10 @@ import "./MoviesCardList.css";
 
 function MoviesCardList(props) {
   return (
-    <section className='cards section content__section' aria-label='Карточки мест'>
-      <MoviesCard isSavedMoviesCard={props.isSavedMoviesCard} />
-      <MoviesCard isSavedMoviesCard={props.isSavedMoviesCard} />
-      <MoviesCard isSavedMoviesCard={props.isSavedMoviesCard} />
-      {/* <MoviesCard isSavedMoviesCard={props.isSavedMoviesCard} />
-      <MoviesCard isSavedMoviesCard={props.isSavedMoviesCard} />
-      <MoviesCard isSavedMoviesCard={props.isSavedMoviesCard} />
-      <MoviesCard isSavedMoviesCard={props.isSavedMoviesCard} />
-      <MoviesCard isSavedMoviesCard={props.isSavedMoviesCard} />
-      <MoviesCard isSavedMoviesCard={props.isSavedMoviesCard} />
-      <MoviesCard isSavedMoviesCard={props.isSavedMoviesCard} />
-      <MoviesCard isSavedMoviesCard={props.isSavedMoviesCard} />
-      <MoviesCard isSavedMoviesCard={props.isSavedMoviesCard} /> */}
+    <section className='cards section content__section' aria-label='Карточки фильмов'>
+      {props.moviesCard.slice(0, props.visibleMovies).map((movieInfo) => {
+        return <MoviesCard key={movieInfo.id || movieInfo._id} movie={movieInfo} {...props} />;
+      })}
     </section>
   );
 }

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import { withRouter } from "react-router-dom";
 import AuthForm from "../AuthForm/AuthForm";
 import "./Register.css";
 import useFormWithValidation from "../../hooks/useFormWithValidation";
