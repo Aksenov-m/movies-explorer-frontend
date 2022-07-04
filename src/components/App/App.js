@@ -14,8 +14,20 @@ import ProtectedRoute from "../ProtectedRoute/ProtectedRoute"; // импорти
 import * as moviesAuth from "../../utils/MoviesAuth";
 import mainApi from "../../utils/MainApi";
 import * as moviesApi from "../../utils/MoviesApi";
-
 import "./App.css";
+import {
+  MOVIE_TIME,
+  SCREEN_SIZE_DESKTOP,
+  SCREEN_SIZE_LAPTOP_FIRST,
+  SCREEN_SIZE_LAPTOP,
+  SCREEN_SIZE_MOBILE,
+  SCREEN_SIZE_MOBILE_FIRST,
+  MOVIES_12,
+  MOVIES_8,
+  MOVIES_5,
+  MOVIES_3,
+  MOVIES_2,
+} from "../../config/config";
 
 function App() {
   const [moviesCard, setmoviesCard] = useState([]);
@@ -61,11 +73,11 @@ function App() {
   useEffect(() => {
     tokenCheck();
     if (localStorage.getItem("searcMovies")) {
-    setCheckbox(JSON.parse(localStorage.getItem("isCheckboxFilter")));
-    setCheckboxSaveMoviesCard(JSON.parse(localStorage.getItem("isCheckboxSaveFilter")));
-    setSearchMovies(JSON.parse(localStorage.getItem("searcMovies")));
-    setSearchMoviesName(localStorage.getItem("searcMoviesName"));
-  }
+      setCheckbox(JSON.parse(localStorage.getItem("isCheckboxFilter")));
+      setCheckboxSaveMoviesCard(JSON.parse(localStorage.getItem("isCheckboxSaveFilter")));
+      setSearchMovies(JSON.parse(localStorage.getItem("searcMovies")));
+      setSearchMoviesName(localStorage.getItem("searcMoviesName"));
+    }
   }, []);
 
   const handlResize = () => {
@@ -82,8 +94,7 @@ function App() {
     if (loggedIn) {
       Promise.all([moviesApi.getMovies(), mainApi.getUserInfo(), mainApi.getSavelMoviesCards()])
 
-  
-        .then(([movies, user, saveMovies ]) => {
+        .then(([movies, user, saveMovies]) => {
           setmoviesCard(movies);
           setСurrentUser(user.data);
           const saveMoviesCard = saveMovies.data.filter((i) => i.owner === user.data._id);
@@ -94,25 +105,25 @@ function App() {
   }, [loggedIn]);
 
   useEffect(() => {
-    if ((size <= 1280) & (size > 769)) {
-      setVisibleMovies(12);
-    } else if ((size < 769) & (size > 481)) {
-      setVisibleMovies(8);
-    } else if ((size < 481) & (size > 0)) {
-      setVisibleMovies(5);
+    if ((size <= SCREEN_SIZE_DESKTOP) & (size > SCREEN_SIZE_LAPTOP)) {
+      setVisibleMovies(MOVIES_12);
+    } else if ((size < SCREEN_SIZE_LAPTOP) & (size > SCREEN_SIZE_MOBILE)) {
+      setVisibleMovies(MOVIES_8);
+    } else if ((size < SCREEN_SIZE_MOBILE ) & (size > SCREEN_SIZE_MOBILE_FIRST)) {
+      setVisibleMovies(MOVIES_5);
     } else {
-      setVisibleMovies(12);
+      setVisibleMovies(MOVIES_12);
     }
   }, [size]);
 
   const showMoreMovies = () => {
     setTimeout(() => {
-      if (size >= 1280) {
-        setVisibleMovies((i) => i + 3);
-      } else if (size <= 768) {
-        setVisibleMovies((i) => i + 2);
+      if (size >= SCREEN_SIZE_DESKTOP) {
+        setVisibleMovies((i) => i + MOVIES_3);
+      } else if (size <= SCREEN_SIZE_LAPTOP_FIRST) {
+        setVisibleMovies((i) => i + MOVIES_2);
       } else {
-        setVisibleMovies((i) => i + 3);
+        setVisibleMovies((i) => i + MOVIES_3);
       }
     }, 800);
   };
@@ -157,7 +168,7 @@ function App() {
   }
 
   function filteredCheckboxMovies(array) {
-    return array.filter((movie) => movie.duration <= 40);
+    return array.filter((movie) => movie.duration <= MOVIE_TIME);
   }
 
   function onCheckbox() {
@@ -241,7 +252,7 @@ function App() {
     setSearchMovies([]);
     setLoggedIn(false);
     setCheckbox(false);
-    setSearchMoviesName("")
+    setSearchMoviesName("");
     setCheckboxSaveMoviesCard(false);
     history.push("/");
   }
@@ -259,7 +270,6 @@ function App() {
         setloader(false);
       });
   }
-
 
   // проверка состояния лайка (избранное)
   function checkLikeSaveMovie(movie) {

@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import Navigation from "../Navigation/Navigation";
 import "./Header.css";
 
-
 function Header(props) {
   useEffect(() => {
     if (!props.burgerOpen) return;
@@ -29,11 +28,10 @@ function Header(props) {
 
   return (
     <header className='header section page__header'>
-      <img className='header__logo' src={logo} alt='Логотип.' />
-      <button
-        className={`header__button ${props.loggedIn ? "" : "header__button_disabled"}`}
-        onClick={props.onBurger}
-      ></button>
+      <Link className='link' to='/'>
+        <img className='header__logo' src={logo} alt='Логотип.' />
+      </Link>
+      <button className={`header__button ${props.loggedIn ? "" : "header__button_disabled"}`} onClick={props.onBurger}></button>
       <Navigation {...props} />
       <div className={`header__info ${props.loggedIn ? "header__info_disabled" : ""}`}>
         <Link className='header__text link' to='/signup'>
