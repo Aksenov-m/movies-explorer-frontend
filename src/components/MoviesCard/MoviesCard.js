@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import './MoviesCard.css'
-// import moviesCard from "../../images/movies-card.png";
-// import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 function MoviesCard(props) {
   let isLiked =

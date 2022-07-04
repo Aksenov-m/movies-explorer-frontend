@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import "./SearchForm.css";
 import useFormWithValidation from "../../hooks/useFormWithValidation";
 
@@ -6,17 +6,26 @@ import useFormWithValidation from "../../hooks/useFormWithValidation";
 function SearchForm(props) {
   const { values, handleChange, resetForm, isValid } = useFormWithValidation();
 
-  const inputRef = useRef();
+  const inputRef = useRef(null);
 
   useEffect(() => {
     if (!props.isSavedMoviesCard) {
     inputRef.current.value = props.searchMoviesName;
     }
+    else {
+      inputRef.current.value = props.searchSaveMoviesName;
+    }
   }, []);
+
+  useEffect(() => {
+    props.setMessage("");
+  }, []);
+
 
   useEffect(() => {
     resetForm();
   }, [resetForm]);
+
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -57,7 +66,7 @@ function SearchForm(props) {
             className='search-form__switch'
             id='switch'
             type='checkbox'
-            defaultChecked={!props.isSavedMoviesCard ? props.checkbox : props.onCheckboxSaveMovies}
+            defaultChecked={!props.isSavedMoviesCard ? props.checkbox : props.checkboxSaveMovies}
             onClick={handleToggle}
           ></input>
           <p className='search-form__text'>Короткометражки</p>

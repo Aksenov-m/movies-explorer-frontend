@@ -102,7 +102,7 @@
 
 .profile__error {
   position: absolute;
-  bottom: 50px;
+  bottom: -50px;
   left: 0;
   margin: 0;
   padding: 0;

@@ -3,6 +3,7 @@ import MoviesCard from "../MoviesCard/MoviesCard";
 import "./MoviesCardList.css";
 
 function MoviesCardList(props) {
+
   return (
     <section className='cards section content__section' aria-label='Карточки фильмов'>
       {props.moviesCard.slice(0, props.visibleMovies).map((movieInfo) => {

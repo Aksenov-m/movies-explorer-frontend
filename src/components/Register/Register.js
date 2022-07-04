@@ -54,7 +54,7 @@ function Register({ handleRegister }) {
           id='email'
           name='email'
           className='form__input register__input_string_email'
-          type='text'
+          type='email'
           placeholder=''
           required
           autoComplete='off'

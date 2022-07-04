@@ -6,25 +6,39 @@ import Header from "../Header/Header";
 import "./Profile.css";
 
 // Функциональный компонент Profile
-function Profile(props, { handleUpdateUser, errorMessage }) {
+function Profile(props) {
   const [isEditInfo, setIsEditInfo] = useState(false);
   // Подписка на контекст
   const currentUser = useContext(CurrentUserContext);
-  const ref = useRef(null);
+  // const ref = useRef(null);
+  const inputRefName = useRef();
+  const inputRefEmail = useRef();
+
+  useEffect(() => {
+    inputRefName.current.value = currentUser.name;
+    inputRefEmail.current.value = currentUser.email;
+  }, [props.handleUpdateUser]);
+
+  useEffect(() => {
+    values.name = currentUser.name;
+    values.email = currentUser.email;
+  }, [currentUser])
+
   const { values, handleChange, resetForm, errors, isValid } = useFormWithValidation();
 
   function handleSubmit(e) {
     e.preventDefault();
-    handleUpdateUser(values.name, values.email);
+    props.handleUpdateUser(values.name || currentUser.name, values.email || currentUser.email);
   }
 
   const handleClick = () => {
     setIsEditInfo(true);
-    ref.current.focus();
+    inputRefName.current.focus();
   };
 
   useEffect(() => {
     resetForm();
+    props.setMessage("");
   }, [resetForm]);
 
   useEffect(() => {
@@ -44,15 +58,15 @@ function Profile(props, { handleUpdateUser, errorMessage }) {
               Имя
             </label>
             <input
-              ref={ref}
+              ref={inputRefName}
               className='profile__input'
               type='text'
               id='name'
               name='name'
-              placeholder={currentUser.name}
+              placeholder=''
               required
               pattern='[a-zA-Zа-яА-Я -]{1,}'
-              value={values.name || ""}
+              value={values.name}
               onChange={handleChange}
             ></input>
             <span className='form__input-error profile__name-error'>{errors.name || ""}</span>
@@ -62,19 +76,20 @@ function Profile(props, { handleUpdateUser, errorMessage }) {
               E-&nbsp;mail
             </label>
             <input
+              ref={inputRefEmail}
               className='profile__input'
               type='email'
               id='email'
               name='email'
-              placeholder={currentUser.email}
+              placeholder=''
               required
-              value={values.email || ""}
+              value={values.email}
               onChange={handleChange}
             ></input>
             <span className='form__input-error profile__email-error'>{errors.email || ""}</span>
           </fieldset>
           <div className='profile__container'>
-            <p className='profile__error'>{errorMessage || ""}</p>
+            <p className='profile__error'>{props.errorMessage || ""}</p>
             <button
               className={`button button_theme_green link ${isEditInfo ? "" : "profile__button_disabled"}`}
               type='submit'
