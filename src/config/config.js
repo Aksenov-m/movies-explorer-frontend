@@ -1,0 +1,11 @@
+export const MOVIE_TIME = 40;
+export const SCREEN_SIZE_DESKTOP = 1280;
+export const SCREEN_SIZE_LAPTOP_FIRST = 768;
+export const SCREEN_SIZE_LAPTOP = 769;
+export const SCREEN_SIZE_MOBILE = 481;
+export const SCREEN_SIZE_MOBILE_FIRST =0;
+export const MOVIES_12 = 12;
+export const MOVIES_8 = 8;
+export const MOVIES_5 = 5;
+export const MOVIES_3 = 3;
+export const MOVIES_2 = 2;

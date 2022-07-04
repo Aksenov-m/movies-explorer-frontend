@@ -1,0 +1,115 @@
+.popup {
+    display: flex;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: #000000;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility .5s, opacity .5s linear;
+  }
+
+  .popup_opened {
+    opacity: 1;
+    visibility: visible;
+    transition: visibility .5s, opacity .5s linear;
+  }
+
+  .popup__container {
+    position: relative;
+    border-radius: 10px;
+    background-color: #ffffff;
+    max-width: 430px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 34px 36px 37px 36px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    justify-content: space-between;
+  }
+  
+  @media screen and (max-width: 450px) {
+    .popup__container {
+      max-width: 100%;
+      margin: 0 19px;
+      padding: 25px 22px;
+    }
+  }
+
+  .popup__close-button {
+    position: absolute;
+    right: -39px;
+    top: -39px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    height: 32px;
+    width: 32px;
+    padding: 0;
+  }
+  
+  .popup__close-button:before {
+    position: absolute;
+    background-color: #ffffff;
+    content: '';
+    height: 34px;
+    border: 2px solid #ffffff;
+    top: 0;
+    transform: rotate(45deg);
+  }
+  
+  .popup__close-button:after {
+    position: absolute;
+    content: '';
+    height: 34px;
+    border: 2px solid #ffffff;
+    background-color: #ffffff;
+    top: 0;
+    transform: rotate(-45deg);
+  }
+  
+  @media screen and (max-width: 550px) {
+    .popup__close-button {
+      right: 0;
+      height: 20px;
+      width: 20px;
+    }
+    .popup__close-button:before {
+      height: 20px;
+      border: 1.5px solid #ffffff;
+    }
+    .popup__close-button:after {
+      height: 20px;
+      border: 1.5px solid #ffffff;
+    }
+  }
+
+  .popup__image-info {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin: auto;
+    margin-top: 26px;
+  }
+
+  .popup__text {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+    text-align: center;
+    margin: auto;
+    margin-top: 32px;
+    margin-bottom: 23px;
+    padding: 0;
+    max-width: 358px;
+  }
+  

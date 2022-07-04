@@ -1,0 +1,157 @@
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: 56px 30px;
+}
+
+.auth-form__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-form__title {
+  text-align: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+  margin: 0;
+  margin-top: 50px;
+  padding: 0;
+}
+
+.auth-form__info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  margin-top: 80px;
+}
+
+.auth-form__info_form_login {
+  margin-bottom: 66px;
+}
+
+.auth-form__link {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 14px;
+}
+
+.auth-form__text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #a0a0a0;
+  margin: 0;
+  padding: 0;
+  padding-right: 7px;
+}
+
+.auth-form__button {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #2be080;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  text-decoration: none;
+}
+
+.auth-form__error {
+  position: absolute;
+  left: 40px;
+  bottom: 50px;
+  align-items: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #ee3465;
+  transition: 0.3s;
+  padding-top: 6px;
+}
+
+@media screen and (min-width: 321px) {
+  .auth-form {
+    align-items: flex-start;
+  }
+
+  .auth-form__header {
+    align-items: flex-start;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .auth-form__button {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .auth-form {
+    margin: 232px 186px;
+  }
+
+  .auth-form__title {
+    margin-top: 40px;
+  }
+
+  .auth-form__info {
+    margin-top: 40px;
+    margin-bottom: 135px;
+  }
+
+  .auth-form__text {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .auth-form {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .auth-form {
+    margin: 232px 186px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .auth-form {
+    margin-left: 200px;
+    margin-right: 200px;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .auth-form {
+    margin-left: 300px;
+    margin-right: 300px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .auth-form {
+    margin-left: 442px;
+    margin-right: 442px;
+  }
+}

@@ -1,0 +1,33 @@
+.page__container {
+  min-height: 100vh;
+  min-width: 320px;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  z-index: -1;
+}
+
+.page__footer {
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .page__footer {
+    padding-left: 37px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .page__footer {
+    padding-top: 79px;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-bottom: 20px;
+  }
+}
