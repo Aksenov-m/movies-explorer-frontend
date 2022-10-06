@@ -39,7 +39,7 @@ function App() {
   // Стейт, отвечающий за данные текущего пользователя
   const [currentUser, setСurrentUser] = useState({});
   const [isBurgerOpen, setBurgerOpen] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
   // Стейт, который информирует пользователя об успешной (или не очень) регистрации
   const [isRegister, setIsRegister] = useState(false);
   const [isUpdateUser, setIsUpdateUser] = useState(false);
